@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
-        //git을 위한 주석입니다
+        //git을 위한 주석입니다2
         val dice = Dice(6)
         val diceRoll = dice.roll()
         val diceImage: ImageView = findViewById(R.id.imageView)
