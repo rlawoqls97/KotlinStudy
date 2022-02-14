@@ -1,5 +1,6 @@
 package com.example.prj
 
-class Model(
-    val gname: String
+data class Model(
+    var profile: Int,
+    var name: String
 )

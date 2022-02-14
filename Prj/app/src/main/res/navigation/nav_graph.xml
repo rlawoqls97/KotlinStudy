@@ -2,30 +2,4 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/gameFrag">
-
-    <fragment
-        android:id="@+id/gameFrag"
-        android:name="com.example.prj.fragment.GameFrag"
-        android:label="fragment_game"
-        tools:layout="@layout/fragment_game" >
-        <action
-            android:id="@+id/action_gameFrag_to_gameContents"
-            app:destination="@id/gameContents" />
-    </fragment>
-    <fragment
-        android:id="@+id/gameContents"
-        android:name="com.example.prj.fragment.GameContents"
-        android:label="fragment_game_contents"
-        tools:layout="@layout/fragment_game_contents" >
-        <action
-            android:id="@+id/action_gameContents_to_accountFrag"
-            app:destination="@id/accountFrag" />
-    </fragment>
-    <fragment
-        android:id="@+id/accountFrag"
-        android:name="com.example.prj.fragment.AccountFrag"
-        android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
-</navigation>
+    android:id="@+id/nav_graph"/>

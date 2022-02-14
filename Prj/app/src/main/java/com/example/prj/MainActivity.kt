@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
         // 시작화면을 game_navi로해놓음 -> 나중에 수정 필요
-        bnv_main.selectedItemId = R.id.home_navi
+        bnv_main.selectedItemId = R.id.game_navi
 
     }
 
