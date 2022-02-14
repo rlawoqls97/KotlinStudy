@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/home_navi"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/navi_title_home"/>
+    <item android:id="@+id/game_navi"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_game"
+        android:title="@string/navi_title_game"/>
+    <item android:id="@+id/test_navi"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_test"
+        android:title="@string/navi_title_test"/>
+    <item android:id="@+id/account_navi"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_account"
+        android:title="@string/navi_title_account"/>
+
+</menu>

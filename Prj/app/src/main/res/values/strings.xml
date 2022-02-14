@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Prj</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navi_title_home">대화</string>
+    <string name="navi_title_game">게임</string>
+    <string name="navi_title_test">심리테스트</string>
+    <string name="navi_title_account">마이페이지</string>
+    <string name="마이페이지">마이페이지</string>
+    <string name="게임">게임</string>
+    <string name="대화">대화</string>
+    <string name="심리테스트">심리테스트</string>
+    <string name="btn_save_text">저장하기</string>
+    <string name="game_balance">밸런스 게임</string>
+</resources>
