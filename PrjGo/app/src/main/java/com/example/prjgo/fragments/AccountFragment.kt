@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.prjgo.R
 import com.example.prjgo.databinding.FragmentAccountBinding
 import com.example.prjgo.databinding.FragmentHomeBinding
@@ -25,6 +26,15 @@ class AccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_account, container, false)
+        // 이부분 널 오류
+        val args:AccountFragmentArgs by navArgs()
+        val item = args.selectedArgs
+        if(item == ""){
+            binding.selected.text = " "
+        }else{
+            binding.selected.text = item
+        }
+
         // Inflate the layout for this fragment
         binding.homeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_accountFragment_to_homeFragment)

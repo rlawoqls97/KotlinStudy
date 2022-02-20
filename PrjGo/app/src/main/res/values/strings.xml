@@ -6,4 +6,7 @@
     <string name="대화">대화</string>
     <string name="게임">게임</string>
     <string name="마이페이지">마이페이지</string>
+    <string name="저장버튼">저장하기</string>
+    <string name="game_balance">밸런스게임</string>
+    <string name="arrow"><![CDATA[<]]></string>
 </resources>
