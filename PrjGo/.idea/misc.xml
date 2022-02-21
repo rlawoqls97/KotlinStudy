@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20555555555555555" />
         <entry key="app/src/main/res/drawable/backcolor.xml" value="0.20555555555555555" />
         <entry key="app/src/main/res/drawable/bottom_icon.xml" value="0.20555555555555555" />
+        <entry key="app/src/main/res/drawable/contents_button_color.xml" value="0.1935185185185185" />
+        <entry key="app/src/main/res/drawable/corner_btn.xml" value="0.1935185185185185" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.20555555555555555" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.20555555555555555" />
         <entry key="app/src/main/res/drawable/ic_outline_arrow_back_ios_new_24.xml" value="0.1935185185185185" />

@@ -29,7 +29,7 @@ class AccountFragment : Fragment() {
         // 이부분 널 오류
         val args:AccountFragmentArgs by navArgs()
         val item = args.selectedArgs
-        if(item == ""){
+        if(item == null){
             binding.selected.text = " "
         }else{
             binding.selected.text = item

@@ -1,5 +1,6 @@
 package com.example.prjgo.fragments
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -24,6 +25,7 @@ class GameContentsFragment : Fragment() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,7 +34,7 @@ class GameContentsFragment : Fragment() {
         val args:GameContentsFragmentArgs by navArgs()
         val item = args.nameContent.name
         // 이부분 null 오류
-        var selected = ""
+        var selected = " "
         binding.saveBtn.setOnClickListener {
             val action = GameContentsFragmentDirections.actionGameContentsFragmentToAccountFragment(selected)
             it.findNavController().navigate(action)
@@ -51,6 +53,20 @@ class GameContentsFragment : Fragment() {
             binding.item2.setBackgroundColor(Color.parseColor("#FFC93C"))
             // 이부분 널 오류
             selected = binding.item2.text.toString()
+        }
+        // 하드코딩 된 것이라서 나중에 데이터 바꿔줘야함
+        binding.arrowBackwardContents.setOnClickListener {
+            binding.item1.setText("내 흑역사 전세계에 \n 공유하고 5억 받기")
+            binding.item2.setText("그냥살기")
+            binding.item1.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+            binding.item2.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+        }
+        // 하드코딩 된 것이라서 나중에 데이터 바꿔줘야함
+        binding.arrowFowordContents.setOnClickListener {
+            binding.item1.setText("오이케이크 먹기")
+            binding.item2.setText("김치케이크 먹기")
+            binding.item1.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+            binding.item2.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }
         binding.contentsName.setText(item)
         return binding.root
