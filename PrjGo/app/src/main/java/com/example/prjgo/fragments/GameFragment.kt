@@ -62,6 +62,9 @@ class GameFragment : Fragment() {
         binding.gamePgListview.setOnItemClickListener { adapterView, view, i, l ->
             val action = GameFragmentDirections.actionGameFragmentToGameContentsFragment(UserList[i])
             view.findNavController().navigate(action)
+            // 밸런스게임이랑 이구동성게임 같은 틀, 상식이랑 OX퀴즈 같은 틀, 초성게임 따로 틀 이렇게 만들어야함
+            // i의 값이 0, 1일 때 같은 페이지 컨텐츠만 다르게, 2, 3일 때 같은 페이지, 4는 다른 페이지로 만들어야함
+
         }
 
         return binding.root

@@ -26,14 +26,14 @@ class AccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_account, container, false)
-        // 이부분 널 오류
-        val args:AccountFragmentArgs by navArgs()
-        val item = args.selectedArgs
-        if(item == null){
-            binding.selected.text = " "
-        }else{
-            binding.selected.text = item
-        }
+//        // 이부분 널 오류
+//        val args:AccountFragmentArgs by navArgs()
+//        val item = args.selectedArgs
+//        if(item == null){
+//            binding.selected.text = " "
+//        }else{
+//            binding.selected.text = item
+//        }
 
         // Inflate the layout for this fragment
         binding.homeTap.setOnClickListener {

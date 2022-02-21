@@ -25,7 +25,6 @@ class GameContentsFragment : Fragment() {
 
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
