@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_gameFragment_to_gameContentsFragment"
             app:destination="@id/gameContentsFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameContents2Fragment"
+            app:destination="@id/gameContents2Fragment" />
     </fragment>
     <fragment
         android:id="@+id/testFragment"
@@ -85,5 +88,20 @@
         <argument
             android:name="name_content"
             app:argType="com.example.prjgo.Model" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameContents2Fragment"
+        android:name="com.example.prjgo.fragments.GameContents2Fragment"
+        android:label="fragment_game_contents2"
+        tools:layout="@layout/fragment_game_contents2" >
+        <action
+            android:id="@+id/action_gameContents2Fragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <argument
+            android:name="name_contents2"
+            app:argType="com.example.prjgo.Model" />
+        <action
+            android:id="@+id/action_gameContents2Fragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
     </fragment>
 </navigation>

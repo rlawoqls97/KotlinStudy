@@ -39,7 +39,7 @@ class GameFragment : Fragment() {
             Model(R.color.white,"밸런스게임"),
             Model(R.color.white,"이구동성"),
             Model(R.color.white,"O/X 퀴즈"),
-            Model(R.color.white,"상식게임"),
+            Model(R.color.white,"상식퀴즈"),
             Model(R.color.white,"초성퀴즈")
         )
 
@@ -58,12 +58,19 @@ class GameFragment : Fragment() {
         binding.accountTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_gameFragment_to_accountFragment)
         }
+        // 밸런스게임이랑 이구동성게임 같은 틀, 상식이랑 OX퀴즈 같은 틀, 초성게임 따로 틀 이렇게 만들어야함
+        // i의 값이 0, 1일 때 같은 페이지 컨텐츠만 다르게, 2, 3일 때 같은 페이지, 4는 다른 페이지로 만들어야함
 
         binding.gamePgListview.setOnItemClickListener { adapterView, view, i, l ->
-            val action = GameFragmentDirections.actionGameFragmentToGameContentsFragment(UserList[i])
-            view.findNavController().navigate(action)
-            // 밸런스게임이랑 이구동성게임 같은 틀, 상식이랑 OX퀴즈 같은 틀, 초성게임 따로 틀 이렇게 만들어야함
-            // i의 값이 0, 1일 때 같은 페이지 컨텐츠만 다르게, 2, 3일 때 같은 페이지, 4는 다른 페이지로 만들어야함
+            if(i == 0 || i == 1){
+                val actionToContents = GameFragmentDirections.actionGameFragmentToGameContentsFragment(UserList[i])
+                view.findNavController().navigate(actionToContents)
+            }else if(i == 2 || i == 3){
+                val actionToContents2 = GameFragmentDirections.actionGameFragmentToGameContents2Fragment(UserList[i])
+                view.findNavController().navigate(actionToContents2)
+            }
+
+
 
         }
 
