@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/gameFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_gameFragment_to_gameContents2Fragment"
             app:destination="@id/gameContents2Fragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameContents3Fragment"
+            app:destination="@id/gameContents3Fragment" />
     </fragment>
     <fragment
         android:id="@+id/testFragment"
@@ -103,5 +106,19 @@
         <action
             android:id="@+id/action_gameContents2Fragment_to_accountFragment"
             app:destination="@id/accountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameContents3Fragment"
+        android:name="com.example.prjgo.fragments.GameContents3Fragment"
+        android:label="GameContents3Fragment" >
+        <action
+            android:id="@+id/action_gameContents3Fragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_gameContents3Fragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <argument
+            android:name="name_content3"
+            app:argType="com.example.prjgo.Model" />
     </fragment>
 </navigation>

@@ -27,7 +27,7 @@
             android:textStyle="bold" />
         <TextView
             android:id="@+id/contentsExplain"
-            android:text="여러가지 감정을 뜻하는 \n 사자성어 희노애락은 \n 각각 어떤 감정을 뜻하나요?"
+            android:text="초성이 들어가는 단어를 \n돌아가면서 말해보세요!"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -38,9 +38,9 @@
             android:textStyle="bold" />
         <androidx.cardview.widget.CardView
             android:layout_width="320dp"
-            android:layout_height="220dp"
+            android:layout_height="300dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="260dp"
             android:focusable="true"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="13dp"
@@ -53,10 +53,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="정답보기"
+                android:text="ㅎㅅ"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
 

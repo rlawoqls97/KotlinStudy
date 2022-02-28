@@ -36,11 +36,11 @@ class GameFragment : Fragment() {
     ): View? {
         //새로 만든
         var UserList = arrayListOf<Model>(
-            Model(R.color.white,"밸런스게임"),
-            Model(R.color.white,"이구동성"),
-            Model(R.color.white,"O/X 퀴즈"),
-            Model(R.color.white,"상식퀴즈"),
-            Model(R.color.white,"초성퀴즈")
+            Model(R.drawable.bal,"밸런스게임"),
+            Model(R.drawable.lee,"이구동성"),
+            Model(R.drawable.ox,"O/X 퀴즈"),
+            Model(R.drawable.sang,"상식퀴즈"),
+            Model(R.drawable.cho,"초성퀴즈")
         )
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false)
@@ -61,6 +61,7 @@ class GameFragment : Fragment() {
         // 밸런스게임이랑 이구동성게임 같은 틀, 상식이랑 OX퀴즈 같은 틀, 초성게임 따로 틀 이렇게 만들어야함
         // i의 값이 0, 1일 때 같은 페이지 컨텐츠만 다르게, 2, 3일 때 같은 페이지, 4는 다른 페이지로 만들어야함
 
+
         binding.gamePgListview.setOnItemClickListener { adapterView, view, i, l ->
             if(i == 0 || i == 1){
                 val actionToContents = GameFragmentDirections.actionGameFragmentToGameContentsFragment(UserList[i])
@@ -68,10 +69,10 @@ class GameFragment : Fragment() {
             }else if(i == 2 || i == 3){
                 val actionToContents2 = GameFragmentDirections.actionGameFragmentToGameContents2Fragment(UserList[i])
                 view.findNavController().navigate(actionToContents2)
+            }else{
+                val actionToContents3 = GameFragmentDirections.actionGameFragmentToGameContents3Fragment(UserList[i])
+                view.findNavController().navigate(actionToContents3)
             }
-
-
-
         }
 
         return binding.root
