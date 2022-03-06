@@ -34,12 +34,13 @@ class GameContentsFragment : Fragment() {
         val item = args.nameContent.name
         // 이부분 null 오류
         var selected = " "
-        binding.saveBtn.setOnClickListener {
-            // 저장하기 버튼을 누르면 자신이 한 게임에 대한 정보가 들어가야함. 그리고 이미 저장이 되어 있는 문제를 다시 저장하려 하면
-            // 이미 저장이 되어 있다는 알림이 떠야함.
-            val action = GameContentsFragmentDirections.actionGameContentsFragmentToAccountFragment(selected)
-            it.findNavController().navigate(action)
-        }
+        // 지금은 저장하기 버튼이 필요없기 때문에 주석처리 함
+//        binding.saveBtn.setOnClickListener {
+//            // 저장하기 버튼을 누르면 자신이 한 게임에 대한 정보가 들어가야함. 그리고 이미 저장이 되어 있는 문제를 다시 저장하려 하면
+//            // 이미 저장이 되어 있다는 알림이 떠야함.
+//            val action = GameContentsFragmentDirections.actionGameContentsFragmentToAccountFragment(selected)
+//            it.findNavController().navigate(action)
+//        }
         binding.backarrow.setOnClickListener {
             it.findNavController().navigate(R.id.action_gameContentsFragment_to_gameFragment)
         }

@@ -1,10 +1,12 @@
 package com.example.prjgo.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.prjgo.R
@@ -30,12 +32,18 @@ class HomeFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homeFragment_to_gameFragment)
         }
         binding.testTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_testFragment)
+            showDialog()
+//            it.findNavController().navigate(R.id.action_homeFragment_to_testFragment)
         }
         binding.accountTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_accountFragment)
+            showDialog()
+//            it.findNavController().navigate(R.id.action_homeFragment_to_accountFragment)
         }
         return binding.root
+    }
+    private fun showDialog(){
+        val mDialogView = LayoutInflater.from(context).inflate(R.layout.custom_dialog, null)
+        val mBuilder = AlertDialog.Builder(context).setView(mDialogView)
     }
 
 

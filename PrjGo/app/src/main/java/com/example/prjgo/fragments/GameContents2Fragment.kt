@@ -33,10 +33,11 @@ class GameContents2Fragment : Fragment() {
         val args:GameContents2FragmentArgs by navArgs()
         val item = args.nameContents2.name
         var selected = " "
-        binding.saveBtn.setOnClickListener {
-            val action = GameContents2FragmentDirections.actionGameContents2FragmentToAccountFragment(selected)
-            it.findNavController().navigate(action)
-        }
+        // 지금은 저장하기 버튼이 필요없기 때문에 주석처리 함
+//        binding.saveBtn.setOnClickListener {
+//            val action = GameContents2FragmentDirections.actionGameContents2FragmentToAccountFragment(selected)
+//            it.findNavController().navigate(action)
+//        }
         binding.backarrow.setOnClickListener {
             it.findNavController().navigate(R.id.action_gameContents2Fragment_to_gameFragment)
         }
@@ -68,6 +69,4 @@ class GameContents2Fragment : Fragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
-
-
 }

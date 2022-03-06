@@ -30,10 +30,11 @@ class GameContents3Fragment : Fragment() {
         val args:GameContents3FragmentArgs by navArgs()
         val item = args.nameContent3.name
         var selected = " "
-        binding.saveBtn.setOnClickListener {
-            val action = GameContents3FragmentDirections.actionGameContents3FragmentToAccountFragment(selected)
-            it.findNavController().navigate(action)
-        }
+        // 지금은 저장하기 버튼이 필요없기 때문에 주석처리 함
+//        binding.saveBtn.setOnClickListener {
+//            val action = GameContents3FragmentDirections.actionGameContents3FragmentToAccountFragment(selected)
+//            it.findNavController().navigate(action)
+//        }
         binding.backarrow.setOnClickListener {
             it.findNavController().navigate(R.id.action_gameContents3Fragment_to_gameFragment)
         }

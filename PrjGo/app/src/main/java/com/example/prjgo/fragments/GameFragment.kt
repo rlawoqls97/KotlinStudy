@@ -1,11 +1,13 @@
 package com.example.prjgo.fragments
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
 import androidx.core.os.bundleOf
@@ -50,13 +52,16 @@ class GameFragment : Fragment() {
         var listLV = binding.gamePgListview
         listLV.adapter = adapter
         binding.homeTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_gameFragment_to_homeFragment)
+            showDialog()
+            //it.findNavController().navigate(R.id.action_gameFragment_to_homeFragment)
         }
         binding.testTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_gameFragment_to_testFragment)
+            showDialog()
+            //it.findNavController().navigate(R.id.action_gameFragment_to_testFragment)
         }
         binding.accountTap.setOnClickListener {
-            it.findNavController().navigate(R.id.action_gameFragment_to_accountFragment)
+            showDialog()
+            //it.findNavController().navigate(R.id.action_gameFragment_to_accountFragment)
         }
         // 밸런스게임이랑 이구동성게임 같은 틀, 상식이랑 OX퀴즈 같은 틀, 초성게임 따로 틀 이렇게 만들어야함
         // i의 값이 0, 1일 때 같은 페이지 컨텐츠만 다르게, 2, 3일 때 같은 페이지, 4는 다른 페이지로 만들어야함
@@ -77,6 +82,14 @@ class GameFragment : Fragment() {
 
         return binding.root
     }
+    private fun showDialog(){
+        val mDialogView = LayoutInflater.from(context).inflate(R.layout.custom_dialog, null)
+        val mBuilder = AlertDialog.Builder(context).setView(mDialogView).setCancelable(false)
+        val alertDialog = mBuilder.show()
+        alertDialog.findViewById<Button>(R.id.closeBtn).setOnClickListener {
+            alertDialog.dismiss()
+        }
 
+    }
 
 }
