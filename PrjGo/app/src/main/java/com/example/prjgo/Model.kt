@@ -7,5 +7,5 @@ import kotlinx.parcelize.Parcelize
 @kotlinx.android.parcel.Parcelize
 data class Model(
     var profile: Int,
-    var name: String
+    var name: String,
 ) : Parcelable

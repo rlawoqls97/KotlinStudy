@@ -19,12 +19,10 @@ import com.example.prjgo.Model
 import com.example.prjgo.R
 import com.example.prjgo.databinding.FragmentGameBinding
 import com.example.prjgo.databinding.FragmentHomeBinding
-import com.example.prjgo.databinding.GameCardBinding
 
 
 class GameFragment : Fragment() {
     private lateinit var binding : FragmentGameBinding
-    private lateinit var cardBinding: GameCardBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +44,6 @@ class GameFragment : Fragment() {
         )
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false)
-        cardBinding = DataBindingUtil.inflate(inflater, R.layout.game_card, container, false)
         // Inflate the layout for this fragment
         var adapter = ListAdapter(requireActivity(), UserList)
         var listLV = binding.gamePgListview
@@ -56,8 +53,7 @@ class GameFragment : Fragment() {
             //it.findNavController().navigate(R.id.action_gameFragment_to_homeFragment)
         }
         binding.testTap.setOnClickListener {
-            showDialog()
-            //it.findNavController().navigate(R.id.action_gameFragment_to_testFragment)
+            it.findNavController().navigate(R.id.action_gameFragment_to_testFragment)
         }
         binding.accountTap.setOnClickListener {
             showDialog()
@@ -82,6 +78,7 @@ class GameFragment : Fragment() {
 
         return binding.root
     }
+    // 아직 미구현된 페이지들을 눌렀을 경우 dialog 나오게 하는 것
     private fun showDialog(){
         val mDialogView = LayoutInflater.from(context).inflate(R.layout.custom_dialog, null)
         val mBuilder = AlertDialog.Builder(context).setView(mDialogView).setCancelable(false)
