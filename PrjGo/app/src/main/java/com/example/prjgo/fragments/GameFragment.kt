@@ -18,7 +18,6 @@ import com.example.prjgo.ListAdapter
 import com.example.prjgo.Model
 import com.example.prjgo.R
 import com.example.prjgo.databinding.FragmentGameBinding
-import com.example.prjgo.databinding.FragmentHomeBinding
 
 
 class GameFragment : Fragment() {
@@ -36,11 +35,11 @@ class GameFragment : Fragment() {
     ): View? {
         //새로 만든
         var UserList = arrayListOf<Model>(
-            Model(R.drawable.bal,"밸런스게임"),
-            Model(R.drawable.lee,"이구동성"),
-            Model(R.drawable.ox,"O/X 퀴즈"),
-            Model(R.drawable.sang,"상식퀴즈"),
-            Model(R.drawable.cho,"초성퀴즈")
+            Model(R.drawable.bal," 밸런스게임"),
+            Model(R.drawable.lee," 이구동성"),
+            Model(R.drawable.ox," O/X 퀴즈"),
+            Model(R.drawable.sang," 상식퀴즈"),
+            Model(R.drawable.cho," 초성퀴즈")
         )
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false)

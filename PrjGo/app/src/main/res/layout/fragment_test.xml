@@ -50,18 +50,18 @@
                     android:src="@drawable/ic_game" />
 
                 <ImageView
-                    android:id="@+id/homeTap"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_home"/>
-
-                <ImageView
                     android:id="@+id/testTap"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/ic_test_click" />
+
+                <ImageView
+                    android:id="@+id/homeTap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_home"/>
 
                 <ImageView
                     android:id="@+id/accountTap"

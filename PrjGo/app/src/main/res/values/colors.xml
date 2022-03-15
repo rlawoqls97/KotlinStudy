@@ -6,5 +6,7 @@
     <color name="sub_primary">#40A8C4</color>
     <color name="secondary">#FFC93C</color>
     <color name="gray">#C5C5C5</color>
+    <color name="transgray">#66C5C5C5</color>
     <color name="error">#F12B00</color>
+    <color name="transparent">#00000000</color>
 </resources>
