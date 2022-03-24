@@ -63,15 +63,18 @@ class GameFragment : Fragment() {
 
 
         binding.gamePgListview.setOnItemClickListener { adapterView, view, i, l ->
-            if(i == 0 || i == 1){
+            if(i == 0){
                 val actionToContents = GameFragmentDirections.actionGameFragmentToGameContentsFragment(UserList[i])
                 view.findNavController().navigate(actionToContents)
+            }else if(i == 1){
+                val actionToContents = GameFragmentDirections.actionGameFragmentToWithOneGameFragment(UserList[i])
+                view.findNavController().navigate(actionToContents)
             }else if(i == 2 || i == 3){
-                val actionToContents2 = GameFragmentDirections.actionGameFragmentToGameContents2Fragment(UserList[i])
-                view.findNavController().navigate(actionToContents2)
+                val actionToContents = GameFragmentDirections.actionGameFragmentToGameContents2Fragment(UserList[i])
+                view.findNavController().navigate(actionToContents)
             }else{
-                val actionToContents3 = GameFragmentDirections.actionGameFragmentToGameContents3Fragment(UserList[i])
-                view.findNavController().navigate(actionToContents3)
+                val actionToContents = GameFragmentDirections.actionGameFragmentToGameContents3Fragment(UserList[i])
+                view.findNavController().navigate(actionToContents)
             }
         }
 

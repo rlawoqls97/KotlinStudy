@@ -1,6 +1,5 @@
 package com.example.prjgo.fragments
 
-import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,20 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.setFragmentResultListener
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.prjgo.R
-import com.example.prjgo.databinding.FragmentGameContentsBinding
+import com.example.prjgo.bal_game_model.MainViewModel
+import com.example.prjgo.bal_game_model.MainViewModelFactory
+import com.example.prjgo.bal_game_model.Repository
+import com.example.prjgo.databinding.FragmentWithOneGameBinding
+import com.example.prjgo.with_mouth_model.MainViewModel2
+import com.example.prjgo.with_mouth_model.MainViewModelFactory2
+import com.example.prjgo.with_mouth_model.Repository2
 
+class WithOneGameFragment : Fragment() {
 
-class GameContentsFragment : Fragment() {
-    private lateinit var binding : FragmentGameContentsBinding
-
+    private lateinit var binding : FragmentWithOneGameBinding
+    private lateinit var viewModel : MainViewModel2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
     }
 
@@ -29,8 +34,8 @@ class GameContentsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game_contents, container, false)
-        val args:GameContentsFragmentArgs by navArgs()
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_with_one_game, container, false)
+        val args:WithOneGameFragmentArgs by navArgs()
         val item = args.nameContent.name
         // 이부분 null 오류
         var selected = " "
@@ -41,32 +46,43 @@ class GameContentsFragment : Fragment() {
 //            val action = GameContentsFragmentDirections.actionGameContentsFragmentToAccountFragment(selected)
 //            it.findNavController().navigate(action)
 //        }
+        val repository = Repository2()
+        val viewModelFactory = MainViewModelFactory2(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel2::class.java)
+        viewModel.getPost2()
+        viewModel.myResponse2.observe(this, Observer {
+            binding.item1.setText(it.words1)
+            binding.item2.setText(it.words2)
+
+        })
         binding.backarrow.setOnClickListener {
-            it.findNavController().navigate(R.id.action_gameContentsFragment_to_gameFragment)
+            it.findNavController().navigate(R.id.action_withOneGameFragment_to_gameFragment)
         }
         binding.item1.setOnClickListener {
             binding.item1.setBackgroundColor(Color.parseColor("#FFC93C"))
             binding.item2.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
             // 이부분 널 오류
-            selected = binding.item1.text.toString()
+
         }
         binding.item2.setOnClickListener {
             binding.item1.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
             binding.item2.setBackgroundColor(Color.parseColor("#FFC93C"))
             // 이부분 널 오류
-            selected = binding.item2.text.toString()
+
         }
         // 하드코딩 된 것이라서 나중에 데이터 바꿔줘야함
         binding.arrowBackwardContents.setOnClickListener {
-            binding.item1.setText("내 흑역사 전세계에 \n 공유하고 5억 받기")
-            binding.item2.setText("그냥살기")
+            viewModel.getPost2()
+            binding.item1.setText(viewModel.myResponse2.value?.words1)
+            binding.item2.setText(viewModel.myResponse2.value?.words2)
             binding.item1.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
             binding.item2.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }
         // 하드코딩 된 것이라서 나중에 데이터 바꿔줘야함
         binding.arrowFowordContents.setOnClickListener {
-            binding.item1.setText("오이케이크 먹기")
-            binding.item2.setText("김치케이크 먹기")
+            viewModel.getPost2()
+            binding.item1.setText(viewModel.myResponse2.value?.words1)
+            binding.item2.setText(viewModel.myResponse2.value?.words2)
             binding.item1.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
             binding.item2.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }

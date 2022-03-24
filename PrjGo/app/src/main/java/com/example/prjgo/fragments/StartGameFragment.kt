@@ -7,14 +7,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.prjgo.R
+import com.example.prjgo.bal_game_model.MainViewModel
+import com.example.prjgo.bal_game_model.MainViewModelFactory
+import com.example.prjgo.bal_game_model.Repository
 import com.example.prjgo.databinding.FragmentGameContents3Binding
+import com.example.prjgo.start_game_model.MainViewModel3
+import com.example.prjgo.start_game_model.MainViewModelFactory3
+import com.example.prjgo.start_game_model.Repository3
 
 
-class GameContents3Fragment : Fragment() {
+class StartGameFragment : Fragment() {
     private lateinit var binding : FragmentGameContents3Binding
+    private lateinit var viewModel : MainViewModel3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +36,7 @@ class GameContents3Fragment : Fragment() {
     ): View? {
         var clicked = false
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game_contents3, container, false)
-        val args:GameContents3FragmentArgs by navArgs()
+        val args:StartGameFragmentArgs by navArgs()
         val item = args.nameContent3.name
         var selected = " "
         // 지금은 저장하기 버튼이 필요없기 때문에 주석처리 함
@@ -35,6 +44,14 @@ class GameContents3Fragment : Fragment() {
 //            val action = GameContents3FragmentDirections.actionGameContents3FragmentToAccountFragment(selected)
 //            it.findNavController().navigate(action)
 //        }
+        val repository = Repository3()
+        val viewModelFactory = MainViewModelFactory3(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel3::class.java)
+        viewModel.getPost()
+        viewModel.myresponse.observe(this, Observer {
+            binding.item3.setText(it.question)
+
+        })
         binding.backarrow.setOnClickListener {
             it.findNavController().navigate(R.id.action_gameContents3Fragment_to_gameFragment)
         }
@@ -42,22 +59,24 @@ class GameContents3Fragment : Fragment() {
             if(!clicked){
                 clicked = true
                 binding.item3.setBackgroundColor(Color.parseColor("#FFC93C"))
-                binding.item3.setText("홍수 홍삼 황사 한숨\n행사 하수 현실 혜성\n홀수 헬스 환상 허세\n하사 휴식 형상 훈수\n\n등등")
+                binding.item3.setText(viewModel.myresponse.value?.example)
             }else{
                 clicked = false
                 binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
-                binding.item3.setText("ㅎㅅ")
+                binding.item3.setText(viewModel.myresponse.value?.question)
             }
             // 이부분을 눌렀을 때는 색이 변하면서 정답이 나와야 하고 다시 눌렀을 경우에는
             // 정답보기로 바뀌면서 흰색 배경으로 가야하는 것 만들어 줘야함
 
         }
         binding.arrowBackwardContents.setOnClickListener {
-            binding.item3.setText("ㅎㅅ")
+            viewModel.getPost()
+            binding.item3.setText(viewModel.myresponse.value?.question)
             binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }
         binding.arrowFowordContents.setOnClickListener {
-            binding.item3.setText("ㅎㅅ")
+            viewModel.getPost()
+            binding.item3.setText(viewModel.myresponse.value?.question)
             binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }
         binding.contentsName2.setText(item)

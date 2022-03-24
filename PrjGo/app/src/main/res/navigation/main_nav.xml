@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_gameFragment_to_gameContents3Fragment"
             app:destination="@id/gameContents3Fragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_withOneGameFragment"
+            app:destination="@id/withOneGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/testFragment"
@@ -79,7 +82,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameContentsFragment"
-        android:name="com.example.prjgo.fragments.GameContentsFragment"
+        android:name="com.example.prjgo.fragments.BalGameFragment"
         android:label="fragment_game_contents"
         tools:layout="@layout/fragment_game_contents" >
         <action
@@ -94,7 +97,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameContents2Fragment"
-        android:name="com.example.prjgo.fragments.GameContents2Fragment"
+        android:name="com.example.prjgo.fragments.OXGameFragment"
         android:label="fragment_game_contents2"
         tools:layout="@layout/fragment_game_contents2" >
         <action
@@ -109,7 +112,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameContents3Fragment"
-        android:name="com.example.prjgo.fragments.GameContents3Fragment"
+        android:name="com.example.prjgo.fragments.StartGameFragment"
         android:label="GameContents3Fragment" >
         <action
             android:id="@+id/action_gameContents3Fragment_to_gameFragment"
@@ -119,6 +122,17 @@
             app:destination="@id/accountFragment" />
         <argument
             android:name="name_content3"
+            app:argType="com.example.prjgo.Model" />
+    </fragment>
+    <fragment
+        android:id="@+id/withOneGameFragment"
+        android:name="com.example.prjgo.fragments.WithOneGameFragment"
+        android:label="WithOneGameFragment" >
+        <action
+            android:id="@+id/action_withOneGameFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <argument
+            android:name="name_content"
             app:argType="com.example.prjgo.Model" />
     </fragment>
 </navigation>

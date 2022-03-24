@@ -14,7 +14,7 @@ import com.example.prjgo.databinding.FragmentGameContents2Binding
 import com.example.prjgo.databinding.FragmentGameContentsBinding
 
 // 다음문제로 넘기면 위의 내용이랑 안에 있는 텍스트들 그리고 정답도 다 같이 넘어가야함.
-class GameContents2Fragment : Fragment() {
+class OXGameFragment : Fragment() {
     private lateinit var binding : FragmentGameContents2Binding
 
 
@@ -30,7 +30,7 @@ class GameContents2Fragment : Fragment() {
     ): View? {
         var clicked = false
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game_contents2, container, false)
-        val args:GameContents2FragmentArgs by navArgs()
+        val args:OXGameFragmentArgs by navArgs()
         val item = args.nameContents2.name
         var selected = " "
         // 지금은 저장하기 버튼이 필요없기 때문에 주석처리 함

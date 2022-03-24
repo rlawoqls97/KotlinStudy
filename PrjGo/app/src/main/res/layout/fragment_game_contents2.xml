@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/backcolor"
-        tools:context=".fragments.GameContents2Fragment">
+        tools:context=".fragments.OXGameFragment">
         <ImageButton
             android:id="@+id/backarrow"
             android:layout_marginLeft="20dp"
