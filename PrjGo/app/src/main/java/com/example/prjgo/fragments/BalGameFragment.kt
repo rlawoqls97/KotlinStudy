@@ -17,7 +17,7 @@ import com.example.prjgo.bal_game_model.MainViewModelFactory
 import com.example.prjgo.bal_game_model.Repository
 import com.example.prjgo.databinding.FragmentGameContentsBinding
 
-
+// 밸런스 게임의 화면을 구성하는 프래그먼트
 class BalGameFragment : Fragment() {
     private lateinit var binding : FragmentGameContentsBinding
     private lateinit var viewModel : MainViewModel

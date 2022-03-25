@@ -7,15 +7,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.prjgo.OX_game_model.MainViewModel4
+import com.example.prjgo.OX_game_model.MainViewModelFactory4
+import com.example.prjgo.OX_game_model.Repository4
 import com.example.prjgo.R
+import com.example.prjgo.bal_game_model.MainViewModel
+import com.example.prjgo.bal_game_model.MainViewModelFactory
+import com.example.prjgo.bal_game_model.Repository
 import com.example.prjgo.databinding.FragmentGameContents2Binding
 import com.example.prjgo.databinding.FragmentGameContentsBinding
 
-// 다음문제로 넘기면 위의 내용이랑 안에 있는 텍스트들 그리고 정답도 다 같이 넘어가야함.
+// OX퀴즈의 화면을 구성하는 프래그먼트
 class OXGameFragment : Fragment() {
     private lateinit var binding : FragmentGameContents2Binding
+    private lateinit var viewModel : MainViewModel4
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +47,13 @@ class OXGameFragment : Fragment() {
 //            val action = GameContents2FragmentDirections.actionGameContents2FragmentToAccountFragment(selected)
 //            it.findNavController().navigate(action)
 //        }
+        val repository = Repository4()
+        val viewModelFactory = MainViewModelFactory4(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel4::class.java)
+        viewModel.getPost()
+        viewModel.myResponse.observe(this, Observer {
+            binding.contentsExplain.setText(it.question)
+        })
         binding.backarrow.setOnClickListener {
             it.findNavController().navigate(R.id.action_gameContents2Fragment_to_gameFragment)
         }
@@ -45,7 +61,7 @@ class OXGameFragment : Fragment() {
             if(!clicked){
                 clicked = true
                 binding.item3.setBackgroundColor(Color.parseColor("#FFC93C"))
-                binding.item3.setText("기쁨, 노여움, \n슬픔, 즐거움")
+                binding.item3.setText(viewModel.myResponse.value?.answer)
             }else{
                 clicked = false
                 binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
@@ -56,12 +72,14 @@ class OXGameFragment : Fragment() {
 
         }
         binding.arrowBackwardContents.setOnClickListener {
-            binding.contentsExplain.setText("여러가지 감정을 뜻하는 \n 사자성어 희노애락은 \n 각각 어떤 감정을 뜻하나요?")
+            viewModel.getPost()
+            binding.contentsExplain.setText(viewModel.myResponse.value?.question)
             binding.item3.setText("정답보기")
             binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }
         binding.arrowFowordContents.setOnClickListener {
-            binding.contentsExplain.setText("상식퀴즈 다음문제~~")
+            viewModel.getPost()
+            binding.contentsExplain.setText(viewModel.myResponse.value?.question)
             binding.item3.setText("정답보기")
             binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }

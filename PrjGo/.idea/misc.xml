@@ -27,10 +27,11 @@
         <entry key="app/src/main/res/layout/fragment_dialog.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/fragment_game.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_game_contents.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_game_contents2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_game_contents2.xml" value="0.3488372093023256" />
         <entry key="app/src/main/res/layout/fragment_game_contents3.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_game_contents_with_one.xml" value="0.24592391304347827" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_quiz_game.xml" value="0.24592391304347827" />
         <entry key="app/src/main/res/layout/fragment_test.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_with_one_game.xml" value="0.24592391304347827" />
         <entry key="app/src/main/res/layout/game_card.xml" value="0.25" />

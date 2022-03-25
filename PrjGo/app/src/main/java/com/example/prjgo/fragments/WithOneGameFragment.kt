@@ -19,7 +19,7 @@ import com.example.prjgo.databinding.FragmentWithOneGameBinding
 import com.example.prjgo.with_mouth_model.MainViewModel2
 import com.example.prjgo.with_mouth_model.MainViewModelFactory2
 import com.example.prjgo.with_mouth_model.Repository2
-
+// 이구동성 게임의 화면을 구성하는 프래그먼트
 class WithOneGameFragment : Fragment() {
 
     private lateinit var binding : FragmentWithOneGameBinding

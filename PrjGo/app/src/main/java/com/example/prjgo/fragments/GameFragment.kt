@@ -69,10 +69,13 @@ class GameFragment : Fragment() {
             }else if(i == 1){
                 val actionToContents = GameFragmentDirections.actionGameFragmentToWithOneGameFragment(UserList[i])
                 view.findNavController().navigate(actionToContents)
-            }else if(i == 2 || i == 3){
+            }else if(i == 2){
                 val actionToContents = GameFragmentDirections.actionGameFragmentToGameContents2Fragment(UserList[i])
                 view.findNavController().navigate(actionToContents)
-            }else{
+            }else if(i == 3){
+                val actionToContents = GameFragmentDirections.actionGameFragmentToQuizGameFragment(UserList[i])
+                view.findNavController().navigate(actionToContents)
+            } else{
                 val actionToContents = GameFragmentDirections.actionGameFragmentToGameContents3Fragment(UserList[i])
                 view.findNavController().navigate(actionToContents)
             }

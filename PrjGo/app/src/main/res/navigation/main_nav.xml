@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_gameFragment_to_withOneGameFragment"
             app:destination="@id/withOneGameFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/testFragment"
@@ -130,6 +133,17 @@
         android:label="WithOneGameFragment" >
         <action
             android:id="@+id/action_withOneGameFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <argument
+            android:name="name_content"
+            app:argType="com.example.prjgo.Model" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizGameFragment"
+        android:name="com.example.prjgo.fragments.QuizGameFragment"
+        android:label="QuizGameFragment" >
+        <action
+            android:id="@+id/action_quizGameFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
         <argument
             android:name="name_content"
