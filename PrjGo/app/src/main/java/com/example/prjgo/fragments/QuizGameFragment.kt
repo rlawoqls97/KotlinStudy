@@ -69,18 +69,14 @@ class QuizGameFragment : Fragment() {
             // 정답보기로 바뀌면서 흰색 배경으로 가야하는 것 만들어 줘야함
 
         }
-        binding.arrowBackwardContents.setOnClickListener {
+        binding.randomBtn.setOnClickListener {
+            clicked = false
             viewModel.getPost()
             binding.contentsExplain.setText(viewModel.myResponse.value?.question)
             binding.item3.setText("정답보기")
             binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }
-        binding.arrowFowordContents.setOnClickListener {
-            viewModel.getPost()
-            binding.contentsExplain.setText(viewModel.myResponse.value?.question)
-            binding.item3.setText("정답보기")
-            binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
-        }
+
         binding.contentsName2.setText(item)
         // Inflate the layout for this fragment
         return binding.root

@@ -32,13 +32,13 @@ class TestFragment : Fragment() {
     ): View? {
         var UserList = arrayListOf<TestModel>(
             TestModel(R.drawable.first,"MBTI", "https://www.16personalities.com/ko/%EB%AC%B4%EB%A3%8C-%EC%84%B1%EA%B2%A9-%EC%9C%A0%ED%98%95-%EA%B2%80%EC%82%AC"),
-            TestModel(R.drawable.second,"에고그램", "http://ego.na.to/test/ego/"),
-            TestModel(R.drawable.third,"mgram", "https://mgram.me/ko/"),
-            TestModel(R.drawable.fourth,"애착유형", "http://typer.kr/test/ecr/"),
-            TestModel(R.drawable.fifth,"EQ", "https://eqtest.kr/"),
-            TestModel(R.drawable.six,"연애능력", "https://www.banggooso.com/gl/1002/"),
-            TestModel(R.drawable.seven,"연락유형", "https://type-of-contact.netlify.app/"),
-            TestModel(R.drawable.eight,"결혼상대", "https://www.simcong.com/quiz/349"),
+            TestModel(R.drawable.second,"애착유형", "http://typer.kr/test/ecr/"),
+            TestModel(R.drawable.third,"에고그램", "http://ego.na.to/test/ego/"),
+            TestModel(R.drawable.fourth,"mgram", "https://mgram.me/ko/"),
+            TestModel(R.drawable.fifth,"EQ테스트", "https://eqtest.kr/"),
+            TestModel(R.drawable.six,"결혼상대테스트", "https://www.simcong.com/quiz/349"),
+            TestModel(R.drawable.seven,"연락유형테스트", "https://type-of-contact.netlify.app/"),
+            TestModel(R.drawable.eight,"연애능력테스트", "https://www.banggooso.com/gl/1002/"),
         )
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_test, container, false)
         // Inflate the layout for this fragment

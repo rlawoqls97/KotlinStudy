@@ -62,44 +62,27 @@
 
         </androidx.cardview.widget.CardView>
         <!--지금은 저장하기 버튼이 필요없기 때문에 주석처리함-->
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            android:orientation="horizontal">-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
 
-<!--            <Button-->
-<!--                android:id="@+id/save_btn"-->
-<!--                android:layout_width="110dp"-->
-<!--                android:layout_height="37dp"-->
-<!--                android:layout_marginStart="150dp"-->
-<!--                android:layout_marginBottom="50dp"-->
-<!--                android:background="@drawable/corner_btn"-->
-<!--                android:text="@string/저장버튼"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="17sp"-->
-<!--                android:textStyle="bold">-->
+            <Button
+                android:id="@+id/random_btn"
+                android:layout_width="110dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="142dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/corner_btn"
+                android:text="랜덤 섞기"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold">
 
-<!--            </Button>-->
-<!--        </LinearLayout>-->
-        <ImageButton
-            android:id="@+id/arrow_backward_contents"
-            android:src="@drawable/ic_arrow_backword_contents"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="610dp"
-            android:layout_marginLeft="43dp"
-            android:background="@drawable/contents_button_color"
-            />
-        <ImageButton
-            android:id="@+id/arrow_foword_contents"
-            android:src="@drawable/ic_arrow_foword_contents"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="610dp"
-            android:layout_marginLeft="317dp"
-            android:background="@drawable/contents_button_color"
-            />
+            </Button>
+        </LinearLayout>
+
 
 
     </FrameLayout>

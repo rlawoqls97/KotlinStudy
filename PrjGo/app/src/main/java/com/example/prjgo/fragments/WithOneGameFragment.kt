@@ -71,7 +71,7 @@ class WithOneGameFragment : Fragment() {
 
         }
         // 하드코딩 된 것이라서 나중에 데이터 바꿔줘야함
-        binding.arrowBackwardContents.setOnClickListener {
+        binding.randomBtn.setOnClickListener {
             viewModel.getPost2()
             binding.item1.setText(viewModel.myResponse2.value?.words1)
             binding.item2.setText(viewModel.myResponse2.value?.words2)
@@ -79,13 +79,6 @@ class WithOneGameFragment : Fragment() {
             binding.item2.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }
         // 하드코딩 된 것이라서 나중에 데이터 바꿔줘야함
-        binding.arrowFowordContents.setOnClickListener {
-            viewModel.getPost2()
-            binding.item1.setText(viewModel.myResponse2.value?.words1)
-            binding.item2.setText(viewModel.myResponse2.value?.words2)
-            binding.item1.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
-            binding.item2.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
-        }
         binding.contentsName.setText(item)
         return binding.root
     }

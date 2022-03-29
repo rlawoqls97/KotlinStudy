@@ -70,21 +70,14 @@ class BalGameFragment : Fragment() {
 
         }
         // 하드코딩 된 것이라서 나중에 데이터 바꿔줘야함
-        binding.arrowBackwardContents.setOnClickListener {
+        binding.randomBtn.setOnClickListener {
             viewModel.getPost()
             binding.item1.setText(viewModel.myResponse.value?.solution1)
             binding.item2.setText(viewModel.myResponse.value?.solution2)
             binding.item1.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
             binding.item2.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }
-        // 하드코딩 된 것이라서 나중에 데이터 바꿔줘야함
-        binding.arrowFowordContents.setOnClickListener {
-            viewModel.getPost()
-            binding.item1.setText(viewModel.myResponse.value?.solution1)
-            binding.item2.setText(viewModel.myResponse.value?.solution2)
-            binding.item1.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
-            binding.item2.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
-        }
+
         binding.contentsName.setText(item)
         return binding.root
     }

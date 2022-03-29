@@ -41,7 +41,6 @@ class OXGameFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game_contents2, container, false)
         val args:OXGameFragmentArgs by navArgs()
         val item = args.nameContents2.name
-        var selected = " "
         // 지금은 저장하기 버튼이 필요없기 때문에 주석처리 함
 //        binding.saveBtn.setOnClickListener {
 //            val action = GameContents2FragmentDirections.actionGameContents2FragmentToAccountFragment(selected)
@@ -61,7 +60,11 @@ class OXGameFragment : Fragment() {
             if(!clicked){
                 clicked = true
                 binding.item3.setBackgroundColor(Color.parseColor("#FFC93C"))
-                binding.item3.setText(viewModel.myResponse.value?.answer)
+                if(viewModel.myResponse.value?.answer == true){
+                    binding.item3.setText("O")
+                }else if (viewModel.myResponse.value?.answer == false){
+                    binding.item3.setText("X")
+                }
             }else{
                 clicked = false
                 binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
@@ -69,20 +72,15 @@ class OXGameFragment : Fragment() {
             }
             // 이부분을 눌렀을 때는 색이 변하면서 정답이 나와야 하고 다시 눌렀을 경우에는
             // 정답보기로 바뀌면서 흰색 배경으로 가야하는 것 만들어 줘야함
+        }
+        binding.randomBtn.setOnClickListener {
+            clicked = false
+            viewModel.getPost()
+            binding.contentsExplain.setText(viewModel.myResponse.value?.question)
+            binding.item3.setText("정답보기")
+            binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
+        }
 
-        }
-        binding.arrowBackwardContents.setOnClickListener {
-            viewModel.getPost()
-            binding.contentsExplain.setText(viewModel.myResponse.value?.question)
-            binding.item3.setText("정답보기")
-            binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
-        }
-        binding.arrowFowordContents.setOnClickListener {
-            viewModel.getPost()
-            binding.contentsExplain.setText(viewModel.myResponse.value?.question)
-            binding.item3.setText("정답보기")
-            binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
-        }
         binding.contentsName2.setText(item)
         // Inflate the layout for this fragment
         return binding.root

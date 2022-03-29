@@ -60,6 +60,7 @@ class StartGameFragment : Fragment() {
                 clicked = true
                 binding.item3.setBackgroundColor(Color.parseColor("#FFC93C"))
                 binding.item3.setText(viewModel.myresponse.value?.example)
+
             }else{
                 clicked = false
                 binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
@@ -69,16 +70,13 @@ class StartGameFragment : Fragment() {
             // 정답보기로 바뀌면서 흰색 배경으로 가야하는 것 만들어 줘야함
 
         }
-        binding.arrowBackwardContents.setOnClickListener {
+        binding.randomBtn.setOnClickListener {
+            clicked = false
             viewModel.getPost()
             binding.item3.setText(viewModel.myresponse.value?.question)
             binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
         }
-        binding.arrowFowordContents.setOnClickListener {
-            viewModel.getPost()
-            binding.item3.setText(viewModel.myresponse.value?.question)
-            binding.item3.setBackgroundColor(Color.parseColor("#FFFFFFFF"))
-        }
+
         binding.contentsName2.setText(item)
         return binding.root
     }

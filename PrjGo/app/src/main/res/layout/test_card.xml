@@ -39,7 +39,7 @@
                 android:layout_marginStart="5dp"
                 android:gravity="center_vertical"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold"></TextView>
 
         </LinearLayout>
